@@ -11,10 +11,21 @@ include('header.php');
           <div class="text-white">
             <h1 class="mb-3">GET TO CONTACT WHOEVER YOU HAVE IN MIND</h1>
             <h5 class="mb-4">Best & free contact web site</h5>
+            <?php
+            if(isset($idd)){
+            
+            ?>
+            <a class="btn btn-outline-light btn-lg m-2"  href="contacts.php">contacts</a>
+            <a class="btn btn-outline-light btn-lg m-2"  href="contacts.php">log out</a><?php }else{?>
+                
             <a class="btn btn-outline-light btn-lg m-2"  role="button"
               rel="nofollow" target="_blank" data-toggle="modal" data-target="#exampleModalCenter">sign in</a>
             <a class="btn btn-outline-light btn-lg m-2"  target="_blank"
               role="button" data-toggle="modal" data-target="#examplesignup">sign up</a>
+              
+              
+              
+              <?php } ?>
           </div>
         </div>
       </div>
@@ -24,5 +35,6 @@ include('header.php');
   <!--Main Navigation-->
 
  <?php 
+ include('modals.php');
  include('footer.php');?>
 

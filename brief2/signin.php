@@ -1,21 +1,27 @@
-<?php 
-session_start();
+<?php session_start();include 'connexion.php';
+
+
 
     if(isset($_POST['submit'])){
+        
+        echo "dima kokab is not the answer";
     $username = $_POST['username'];
     $password = $_POST['password'];
     $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $sql = "SELECT * FROM user WHERE username='$username' AND password='$password'";
+    $sql = "INSERT INTO `user` VALUES (NULL,'$username','$email','$password')";
     $result=mysqli_query($conn,$sql);
-    if(mysqli_num_rows($result) === 1){
-        $sql2="select id from  user where username like '$username' and password like '$password'";
-        $_SESSION["id"]=mysqli_query($conn,$sql2);
-        header('location: full-img-cover.html');
-    }else{
-        echo "dima kokab is not the password";
+    $sal="select id from user where email = '$email'";
+    $ghr=mysqli_query($conn,$sal);
+    while($str=mysqli_fetch_assoc($ghr)){
+        $_SESSION['id']=$str['id'];
     }
-
+    header('location:contacts.php');
+   if($result){
+   
+   }else{
+    echo "dima kokab is not the password";
+   }
 
 }
+?>
   

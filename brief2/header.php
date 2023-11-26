@@ -1,9 +1,8 @@
 <?php 
 session_start();
-$idd=$_SESSION["id"];
-if($idd < 0){
-  header('location:contacts.php');
-}
+if(isset($_SESSION["id"])){
+  $idd=$_SESSION["id"];
+};
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +24,6 @@ if($idd < 0){
 
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
-
 <body>
   <!--Main Navigation-->
   <header>
@@ -54,13 +52,42 @@ if($idd < 0){
         <a class="navbar-brand nav-link"  href="index.php">
           <img src="./image/icon2.png" height="30" alt="MDB Logo" loading="lazy" style="margin-top: -1px" alt="">
         </a>
+<?php
+
+if(isset($idd)){
+?>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <?php
+    $name="select * from user where id='$idd'";
+    $resu=mysqli_query($conn,$name);
+while ($row2 = mysqli_fetch_assoc($resu)){
+  echo $row2['username'];}
+    ?>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">profil</a>
+    <a class="dropdown-item" href="contacts.php?">votre contats</a>
+    <a class="dropdown-item" href="logout.php">log out</a>
+  </div>
+</div>
+<?php 
+
+
+}
+else{
+
+
+?>
+
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary py-2 px-3" data-toggle="modal" data-target="#exampleModalCenter">
   <i class="fa-solid fa-user" style="color: #ffffff;"></i>
 </button>
 
 <?php 
-include('modals.php');
+}
+
 ?>
     </nav>
     <!-- Navbar -->
