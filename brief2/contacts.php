@@ -7,7 +7,7 @@ else{
   header('location:index.php');
 }
 $sql="insert into contacts value(NULL,)";
-$sql="select * from contact where iduser='$idd'";
+$sql="select * from contacts where iduser='$idd'";
 $result=mysqli_query($conn,$sql);
 $name="select * from user where id='$idd'";
 $resu=mysqli_query($conn,$name);
@@ -45,7 +45,7 @@ echo'
 
 
 $_SESSION["cid"] = $idd2;
-$fas="SELECT * FROM CONTACT WHERE id = $idd2";
+$fas="SELECT * FROM contacts WHERE id = $idd2";
 $ref=mysqli_query($conn,$fas);
 while($fill=mysqli_fetch_assoc($ref)){
 ?>

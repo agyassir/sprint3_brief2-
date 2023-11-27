@@ -16,7 +16,7 @@ include('header.php');
             
             ?>
             <a class="btn btn-outline-light btn-lg m-2"  href="contacts.php">contacts</a>
-            <a class="btn btn-outline-light btn-lg m-2"  href="contacts.php">log out</a><?php }else{?>
+            <a class="btn btn-outline-light btn-lg m-2"  href="logout.php">log out</a><?php }else{?>
                 
             <a class="btn btn-outline-light btn-lg m-2"  role="button"
               rel="nofollow" target="_blank" data-toggle="modal" data-target="#exampleModalCenter">sign in</a>

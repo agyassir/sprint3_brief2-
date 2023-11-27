@@ -55,7 +55,7 @@ if(isset($_POST['submit'])
     $password=$_POST['password'];
     $sql="select   VALUES(NULL,'$username','$email','$number','1')";
 $result = mysqli_query($conn,$sql);
-$search="SELECT * FROM CONTACT";
+$search="SELECT * FROM contacts";
 $res=mysqli_query($conn,$search);
 while ($row = mysqli_fetch_assoc($res)) {
 

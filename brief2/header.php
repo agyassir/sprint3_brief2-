@@ -11,7 +11,8 @@ if(isset($_SESSION["id"])){
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>Material Design for Bootstrap</title>
+  <link rel="icon" type="image/x-icon" href="favicon-16x16.png">
+  <title>YouContact</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
   <!-- Google Fonts Roboto -->
@@ -66,7 +67,7 @@ while ($row2 = mysqli_fetch_assoc($resu)){
     ?>
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">profil</a>
+    <a class="dropdown-item" href="profil.php">profil</a>
     <a class="dropdown-item" href="contacts.php?">votre contats</a>
     <a class="dropdown-item" href="logout.php">log out</a>
   </div>
